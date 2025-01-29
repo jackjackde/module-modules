@@ -1,0 +1,60 @@
+{
+  "name": "jackjackde/module-modules",
+  "description": "Module Package for Laravel based on https://github.com/Jeroen-G/laravel-packager",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Stefan Grünberg",
+      "email": "git@jackjack.de",
+      "homepage": "http://www.jackjack.de"
+    }
+  ],
+  "homepage": "https://github.com/jackjackde/modules",
+  "keywords": [
+    "Laravel",
+    "Modules"
+  ],
+  "require": {
+    "illuminate/support": "~11",
+    "spatie/laravel-data": "^4.11"
+  },
+  "require-dev": {
+    "pestphp/pest": "^3.7",
+    "pestphp/pest-plugin-laravel": "^3.0",
+    "jackjackde/laravel-packager": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "JackJack\\Modules\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JackJack\\Modules\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@php -r 'echo \"HELLO WORLD!!! \\n\";'"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "JackJack\\Modules\\Providers\\ModulesServiceProvider"
+      ],
+      "aliases": {
+        "Modules": "JackJack\\Modules\\Facades\\Modules"
+      }
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/jackjackde/laravel-packager"
+    }
+  ]
+}
